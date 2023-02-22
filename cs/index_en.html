@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032) -->
+<html lang="en" class=" js no-touch cssanimations csstransitions" style="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Haiyu Tech Pte.Ltd.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Customer service outsourcing, customer service training and other services, create an excellent customer service outsourcing service platform, and use customer service to improve the competitiveness of online stores.">
+    <meta name="keywords" content="Customer service outsourcing, customer service training, e-commerce operations, customer service hosting, customer complaint handling">
+    <meta property="og:url" content="//www.haiyu.co/cs/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Haiyu Tech Pte.Ltd.-Network & Customer Service Outsourcing">
+    <meta property="og:title" content="Haiyu TECH-Network & Customer Service Outsourcing">
+    <meta property="og:locale" content="zh_en">
+    <meta property="og:locale:alternate" content="zh_en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+    <meta property="og:image" content="img/image.jpg">
+    <meta property="og:image:type" content="img/jpeg">
+    <meta property="og:image:width" content="307">
+    <meta property="og:image:height" content="235">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="geo.region" content="en">
+    <meta name="robots" content="all">
+    <meta name="rating" content="general">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css?v=1" />
+    <!-- 彈跳視窗 -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- 動畫 -->
+    <link href="addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <!-- 選單 -->
+    <link rel="stylesheet" href="css/main-style.css?v=14">
+    <!-- 主要css -->
+    <link rel="stylesheet" href="css/mobile.css?v=35">
+    <!-- 手機 -->
+    <!-- Js -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 基本 -->
+    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg></script>
+    <!-- icon -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js">
+    </script>
+    <script>
+    $(window).load(function() {
+        $(".bacc").fadeOut(1000);
+        Resize_Link();
+    })
+    $(window).resize(function() {
+        Resize_Link();
+        Resize_Move();
+    });
+
+    function Resize_Link() {
+        var ww = document.body.clientWidth;
+        var hash = window.location.hash.substring(1);
+        if (ww > 992) {
+            $('#sp_link1').unbind('click').bind('click', (function() { $('#sp_link1s').trigger('click'); }));
+            $('#sp_link2').unbind('click').bind('click', (function() { $('#sp_link2s').trigger('click'); }));
+        } else {
+            $('#sp_link1').unbind('click');
+            $('#sp_link2').unbind('click');
+        }
+    }
+
+    function Resize_Move(hashtag) {
+        var ww = document.body.clientWidth;
+        if (ww <= 992 && hashtag != 'contact')
+            $('.page-wrapper').css({ 'padding-bottom': '40px' });
+        else
+            $('.page-wrapper').css({ 'padding-bottom': '0' });
+    }
+
+    $(document).ready(function() {
+        var hash = window.location.hash.substring(1);
+        switch (hash) {
+            case 'about':
+            case 'gambling':
+            case 'lottery':
+            case 'service':
+            case 'success':
+            case 'portfolio':
+            case 'contact':
+                hashurl = 'en/' + hash + '.html';
+                break;
+            default:
+                hashurl = 'en/main.html?v=1';
+                break;
+        }
+
+        $.get(hashurl, function(data) {
+            window.scrollTo(0, 0);
+            $(".page-wrapper").html(data);
+            if (hash.search("contact") == -1)
+                $('footer').css({ 'display': 'block' });
+            else
+                $('footer').css({ 'display': 'none' });
+            Resize_Move(hash);
+        });
+        $(function() {
+            $('.mo_logo').click(function() {
+                var $this = $(this),
+                    _clickTab = $this.attr('data-href');
+                if ("-1" == _clickTab.search("http://")) {
+                    $.get(_clickTab, function(data) {
+                        window.scrollTo(0, 0);
+                        window.location.hash = '';
+                        $(".page-wrapper").html(data);
+                        Resize_Move('');
+                    });
+                    return false;
+                }
+            })
+        })
+
+        $(function() {
+            $('.menu li.html,.index80').click(function() {
+                var $this = $(this),
+                    _clickTab = $this.find('a').attr('data-href');
+                if (_clickTab.search("en/") > -1) {
+                    $(".bacc").fadeIn();
+                }
+                if ("-1" == _clickTab.search("http://")) {
+                    $.get(_clickTab, function(data) {
+                        window.scrollTo(0, 0);
+                        window.location.hash = _clickTab.replace('en/', '').replace('.html', '');
+                        $(".page-wrapper").html(data);
+                    }).done(function() {
+                        $(".bacc").fadeOut(1000);
+                        if ($('#mobile_nav').hasClass('slideright'))
+                            $('#hamburger-1').trigger('click');
+                    });
+
+                    if (_clickTab.search("contact") == -1) {
+                        $('footer').css({ 'display': 'block' });
+                    } else {
+                        $('footer').css({ 'display': 'none' });
+                    }
+                    Resize_Move(_clickTab.replace('en/', '').replace('.html', ''));
+                    return false;
+                }
+            })
+        })
+
+        $(function() {
+            $('.menu li').not($('.menu li.html')).click(function() {
+                var ww = document.body.clientWidth;
+                if (ww <= 992) {
+                    if ($(this).children('ul').eq(0).is(':visible') == true) {
+                        if ($(this).children('a').eq(0).prop('id') == 'sp_link1')
+                            $('#sp_link1s').trigger('click');
+                        else if ($(this).children('a').eq(0).prop('id') == 'sp_link2')
+                            $('#sp_link2s').trigger('click');
+                    }
+                }
+            })
+        })
+
+        $('body').on('click', '.index80 a', function() {
+            event.preventDefault();
+            var clickTab = $(this).attr('data-href');
+            if (clickTab.indexOf("http://") == -1) {
+                $.get(clickTab, function(data) {
+                    window.scrollTo(0, 0);
+                    window.location.hash = clickTab.replace('en/', '').replace('.html', '');
+                    $(".page-wrapper").html(data);
+                    Resize_Move(clickTab.replace('en/', '').replace('.html', ''));
+                });
+                return false;
+            }
+        });
+    });
+    </script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <!-- 彈跳視窗 -->
+    <script>
+    $(".fancybox").fancybox();
+    </script>
+</head>
+
+<body>
+    <div class="bacc">
+        <img src="img/loader.gif" class="logo_animation">
+    </div>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-default navbar-fixed-top en" role="navigation">
+        <a data-href="en/main.html" class="page-link active mo_logo"> <img src="img/logo_en.png"alt="Haiyu Tech Pte.Ltd."></a>
+        <div class="mo_flex">
+            <div id="mobile_menu_labIcon">
+                <div class="hamburger" id="hamburger-1">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Logo -->
+        <div id="mobile_nav">
+            <a href="index_en.html" class="logo logo-img page-link active"> <img src="img/logo_en.png" class="logo_img_responsive" alt="Haiyu Tech Pte.Ltd."> </a>
+            <!-- end: Logo -->
+            <!-- Menu -->
+            <div class="navi-scroll">
+                <div class="navi-col navbar-collapse collapse">
+                    <ul class="menu nav navbar-nav en">
+                        <li class="html"><a class="page-link " href="#about" data-href="en/about.html"><i class="fa fa-hospital-symbol"></i><span >About Us</span></a></li>
+                        <li><a class="page-link" id="sp_link1" href="#"><i class="fas fa-hospital"></i><span >Services</span><i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="html"><a id="sp_link1s" href="#gambling" data-href="en/gambling.html"><i class="fas fa-golf-ball"></i>Gambling Site</a></li>
+                                <li class="html"><a href="#lottery" data-href="en/lottery.html"><i class="fas fa-golf-ball"></i>Lottery website</a></li>
+                                <li class="html"><a href="#service" data-href="en/service.html"><i class="fas fa-comment"></i>Customer service</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="page-link" id="sp_link2" href="#"><i class="fas fa-random"></i><span>Cooperation brand</span><i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="html"><a id="sp_link2s" href="#success" data-href="en/success.html?v=1"><i class="fas fa-users"></i>Partner</a></li>
+                                <li class="html"><a href="#portfolio" data-href="en/portfolio.html"><i class="fas fa-calendar-check"></i>Success case</a></li>
+                            </ul>
+                        </li>
+                        <li class="html"><a class="page-link" href="#contact" data-href="en/contact.html"><i class="fa fa-phone"></i><span>Contact us </span> </a></li>
+                    </ul>
+                    <ul class="language-icons">
+                        <li><a class="active" href="">EN</a></li>
+                        <li><a href="index_traditional.html?v=1">繁中</a></li>
+                        <li><a href="index.html?v=1">简中</a></li>
+                    </ul>
+                </div>
+                <!-- .navi-col -->
+            </div>
+        </div>
+    </nav>
+    <!-- end: NAVIGATION -->
+    <!-- PAGE-WRAPPER -->
+    <div class="page-wrapper en">
+    </div>
+    <footer class="index">
+        <div class="link2">
+            <a href="mailto:join@haiyu.co">
+                <h4 class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="contact"><i class="fa fa-envelope"></i></div> 
+                                </h4>
+            </a>
+            <a href="https://t.me/HaiYu_tech" target="_blank">
+                <h4 class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="contact"><i class="fab fa-telegram-plane"></i></div>
+                                 </h4>
+            </a>
+            <a href="https://join.skype.com/invite/l9R2K1VHToIX" target="_blank">
+                <h4 class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="contact"><i class="fab fa-skype"></i></div>
+                                </h4>
+            </a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+    <!-- 主選單 -->
+    <script type="text/javascript" src="addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
+    <!-- 主選單 -->
+    <script src='js/wow.js?t=1234'></script>
+    <!-- 動畫 -->
+    <script src="js/main.js"></script>
+    <!-- 設定所有參數 -->
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032) -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Haiyu Tech Pte.Ltd.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="客服外包，专业包网，客服培训等服务，打造优秀的客服外包服务平台，用客服提升网店竞争力。">
+    <meta name="keywords" content="客服外包,专业包网，客服培训,电商运营,客服托管,客诉处理">
+    <meta property="og:url" content="http://www.haiyu.co/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Haiyu TECH-Haiyu Tech Pte.Ltd.">
+    <meta property="og:title" content="Haiyu TECH-Haiyu Tech Pte.Ltd.">
+    <meta property="og:locale" content="zh_ch">
+    <meta property="og:locale:alternate" content="zh_tw">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+    <meta property="og:image" content="img/image.jpg">
+    <meta property="og:image:type" content="img/jpeg">
+    <meta property="og:image:width" content="307">
+    <meta property="og:image:height" content="235">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="geo.region" content="tw">
+    <meta name="robots" content="all">
+    <meta name="rating" content="general">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css?v=1" />
+    <!-- 彈跳視窗 -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- 動畫 -->
+    <link href="addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <!-- 選單 -->
+    <link rel="stylesheet" href="css/main-style.css?v=44">
+    <!-- 主要css -->
+    <link rel="stylesheet" href="css/mobile.css?v=30">
+    <!-- 手機 -->
+    <!-- Js -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 基本 -->
+    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg></script>
+    <!-- icon -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+    <script>
+    $(window).load(function() {
+        $(".bacc").fadeOut(1000);
+        Resize_Link();
+    })
+    $(window).resize(function() {
+        Resize_Link();
+        Resize_Move();
+    });
+
+    function Resize_Link() {
+        var ww = document.body.clientWidth;
+        var hash = window.location.hash.substring(1);
+        if (ww > 992) {
+            $('#sp_link1').unbind('click').bind('click', (function() { $('#sp_link1s').trigger('click'); }));
+            $('#sp_link2').unbind('click').bind('click', (function() { $('#sp_link2s').trigger('click'); }));
+        } else {
+            $('#sp_link1').unbind('click');
+            $('#sp_link2').unbind('click');
+        }
+    }
+
+    function Resize_Move(hashtag) {
+        var ww = document.body.clientWidth;
+        if (ww <= 992 && hashtag != 'contact')
+            $('.page-wrapper').css({ 'padding-bottom': '40px' });
+        else
+            $('.page-wrapper').css({ 'padding-bottom': '0' });
+    }
+
+    $(document).ready(function() {
+        var hash = window.location.hash.substring(1);
+        switch (hash) {
+            case 'about':
+            case 'lottery':
+            case 'gambling':
+            case 'service':
+            case 'success':
+            case 'portfolio':
+            case 'contact':
+                hashurl = 'ch/' + hash + '.html';
+                break;
+            default:
+                hashurl = 'ch/main.html';
+                break;
+        }
+
+        $.get(hashurl, function(data) {
+            window.scrollTo(0, 0);
+            $(".page-wrapper").html(data);
+            if (hash.search("contact") == -1)
+                $('footer').css({ 'display': 'block' });
+            else
+                $('footer').css({ 'display': 'none' });
+            Resize_Move(hash);
+        });
+        $(function() {
+            $('.mo_logo').click(function() {
+                var $this = $(this),
+                    _clickTab = $this.attr('data-href');
+                if ("-1" == _clickTab.search("http://")) {
+                    $.get(_clickTab, function(data) {
+                        window.scrollTo(0, 0);
+                        window.location.hash = '';
+                        $(".page-wrapper").html(data);
+                        Resize_Move('');
+                    });
+                    return false;
+                }
+            })
+        })
+
+        $(function() {
+            $('.menu li.html,.index80').click(function() {
+                var $this = $(this),
+                    _clickTab = $this.find('a').attr('data-href');
+                if (_clickTab.search("ch/") > -1) {
+                    $(".bacc").fadeIn();
+                }
+                if ("-1" == _clickTab.search("http://")) {
+                    $.get(_clickTab, function(data) {
+                        window.scrollTo(0, 0);
+                        window.location.hash = _clickTab.replace('ch/', '').replace('.html', '');
+                        $(".page-wrapper").html(data);
+                    }).done(function() {
+                        $(".bacc").fadeOut(1000);
+                        if ($('#mobile_nav').hasClass('slideright'))
+                            $('#hamburger-1').trigger('click');
+                    });
+
+                    if (_clickTab.search("contact") == -1) {
+                        $('footer').css({ 'display': 'block' });
+                    } else {
+                        $('footer').css({ 'display': 'none' });
+                    }
+                    Resize_Move(_clickTab.replace('ch/', '').replace('.html', ''));
+                    return false;
+                }
+            })
+        })
+
+        $(function() {
+            $('.menu li').not($('.menu li.html')).click(function() {
+                var ww = document.body.clientWidth;
+                if (ww <= 992) {
+                    if ($(this).children('ul').eq(0).is(':visible') == true) {
+                        if ($(this).children('a').eq(0).prop('id') == 'sp_link1')
+                            $('#sp_link1s').trigger('click');
+                        else if ($(this).children('a').eq(0).prop('id') == 'sp_link2')
+                            $('#sp_link2s').trigger('click');
+                    }
+                }
+            })
+        })
+
+        $('body').on('click', '.index80 a', function() {
+            event.preventDefault();
+            var clickTab = $(this).attr('data-href');
+            if (clickTab.indexOf("http://") == -1) {
+                $.get(clickTab, function(data) {
+                    window.scrollTo(0, 0);
+                    window.location.hash = clickTab.replace('ch/', '').replace('.html', '');
+                    $(".page-wrapper").html(data);
+                    Resize_Move(clickTab.replace('ch/', '').replace('.html', ''));
+                });
+                return false;
+            }
+        });
+    });
+    </script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <!-- 彈跳視窗 -->
+    <script>
+    $(".fancybox").fancybox();
+    </script>
+</head>
+
+<body class="ch">
+    <div class="bacc">
+        <img src="img/loader.gif" class="logo_animation">
+    </div>
+    <nav role="navigation" class="pc_logo">
+        <a data-href="ch/main.html" class="page-link mo_logo">  <img src="img/logo_en.png" class="" alt="Haiyu Tech Pte.Ltd."></a>
+        <div class="mo_flex">
+            <div id="mobile_menu_labIcon">
+                <div class="hamburger" id="hamburger-1">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Logo -->
+        <div id="mobile_nav">
+            <a href="index.html" class="logo logo-img page-link active"> <img src="img/logo_en.png?v=1" class="logo_img_responsive" alt="Haiyu Tech Pte.Ltd."> </a>
+            <!-- end: Logo -->
+            <!-- Menu -->
+            <div class="navi-scroll">
+                <div class="navi-col navbar-collapse collapse">
+                    <ul class="menu nav navbar-nav">
+                        <li class="html"><a class="page-link " href="#about" data-href="ch/about.html"><i class="fa fa-hospital-symbol"></i><span >关于我们</span></a></li>
+                        <li><a class="page-link" id="sp_link1" href="#"><i class="fas fa-hospital"></i><span >提供服务</span><i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="html"><a id="sp_link1s" href="#gambling" href="tw/gambling.html"><i class="fas fa-comment"></i>娱乐城包网</a></li>
+                                <li class="html"><a href="#lottery" data-href="ch/lottery.html"><i class="fas fa-golf-ball"></i>彩票包网</a></li>
+                                <li class="html"><a href="#service" data-href="ch/service.html"><i class="fas fa-comment"></i>客服外包</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="page-link" id="sp_link2" href="#"><i class="fas fa-random"></i><span>合作品牌</span><i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="html"><a id="sp_link2s" href="#success" data-href="ch/success.html"><i class="fas fa-users"></i>合作伙伴</a></li>
+                                <li class="html"><a href="#portfolio" data-href="ch/portfolio.html"><i class="fas fa-calendar-check"></i>成功案例</a></li>
+                            </ul>
+                        </li>
+                        <li class="html"><a class="page-link" href="#contact" data-href="ch/contact.html"><i class="fa fa-phone"></i><span>联络我们 </span> </a></li>
+                    </ul>
+                    <ul class="language-icons">
+                        <li><a href="index_en.html">EN</a></li>
+                        <li><a href="index_traditional.html">繁中</a></li>
+                        <li><a class="active" href="">简中</a></li>
+                    </ul>
+                </div>
+                <!-- .navi-col -->
+            </div>
+        </div>
+    </nav>
+    <!-- PAGE-WRAPPER -->
+    <div class="page-wrapper ">
+    </div>
+    <!-- end: PAGE-WRAPPER -->
+    <footer class="index">
+        <div class="link2">
+            <a href="mailto:join@haiyu.co">
+                <h4 class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="contact"><i class="fa fa-envelope"></i></div> 
+                                </h4>
+            </a>
+            <a href="https://t.me/HaiYu_tech" target="_blank">
+                <h4 class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="contact"><i class="fab fa-telegram-plane"></i></div>
+                                 </h4>
+            </a>
+            <a href="https://join.skype.com/invite/l9R2K1VHToIX" target="_blank">
+                <h4 class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="contact"><i class="fab fa-skype"></i></div>
+                                </h4>
+            </a>
+        </div>
+    </footer>
+    <!-- PLUGIN SCRIPTS -->
+    <script src="js/jquery.smartmenus.js"></script>
+    <!-- 主選單 -->
+    <script src="addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
+    <!-- 主選單 -->
+    <script src='js/wow.js?t=1234'></script>
+    <!-- 動畫 -->
+    <script src="js/main.js"></script>
+    <!-- 設定所有參數 -->
+</body>
+
+</html>

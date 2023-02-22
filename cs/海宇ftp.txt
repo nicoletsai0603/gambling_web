@@ -1,0 +1,4 @@
+IP: sftp.system.tripleonetech.com
+port: 22223
+user: haiyu
+passwd: qHJECkH4HQ8znsw6

@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>久赢彩票</title>
+    <link rel="icon" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index_mobile.css" />
+    <link rel="stylesheet" href="css/index_new.css?=v0.0.3" />
+    <link rel="stylesheet" href="css/index_new_mobile.css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".help-page,.lottery-list-page").addClass("banner-ma-151");
+        });
+    </script>
+    <style>
+        .ismobile {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="greybg"></div>
+    <section class="fix-top">
+        <div class="top-blue"></div>
+        <header class="header">
+            <div class="container row flex_end">
+                <!--登陆-->
+                <div id="_player_login_area" style="width: 100%"></div>
+                <!--登陆-->
+                <a href="javascript:;" class="fr xs-visible btn-menu">
+                    <i class="fa fa-reorder"></i>
+                </a>
+            </div>
+            <div class="container row flex_center">
+                <a href="/" class="logo fl mo"></a>
+                <!--登陆前-->
+                <div id="_player_login_area" style="display: block;">
+                    <form id="_og_id_2" action="" method="POST" target="_login_iframe" class="fl isweb">
+                        <div class="login-form fl xs-100 sm-100 fflex sm-fflex">
+                            <div class="form">
+                                <div class="fflex sm-fflex xs-fflex">
+                                    <input class="login" name="login" type="text" placeholder="输入您的账号">
+                                    <div class="line"></div>
+                                    <input class="login" name="password" type="password" placeholder="输入您的密码">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="act" value="iframe_login">
+                            <input type="submit" value="登录" class="loginbtn xs-100 sm-100 xs-t5 sm-t5 J-submit">
+                        </div>
+                    </form>
+                    <!-- 小於1024登录 -->
+                    <input type="submit" value="登录" class="loginbtn mobile fl isweb">
+                    <!-- 小於1024登录 -->
+                    <a href="#" class="btn-register fl isweb"><span>注册</span></a>
+                    <a href="rule.html" class="btn-playInfo fl xs-hidden"><i class="icon xs-hidden"></i><span>彩种玩法</span></a>
+                </div>
+                <!--登陆前-->
+                <!--登陆後-->
+                <div class="fr fr2 flex space-between" style="display: none;">
+                    <div class="memebr_ico">
+                        <i class="per"></i> XXX,欢迎光临 !
+                    </div>
+                    <section class="player_login_flex">
+                        <div id="_player_login_area" class="loginbox fl">
+                            <span class="fl xs-hidden a-links">
+                           <a href="/player_center/dashboard" class="sm-hidden">个人中心</a>
+                                <a href="/player_center2/deposit">充值</a>
+                                <a href="/player_center2/withdraw">提现</a>
+                                <a class="ui-btn ui-btn-logout" href="http://player.lq11111.com/iframe_module/iframe_logout" target="_logout_iframe">安全退出</a>
+                        </span>
+                        </div>
+                        <i class="icon xs-hidden"></i><span>彩种玩法</span>
+                        </a>
+                        <a href="javascript:;" class="fr xs-visible btn-menu">
+                            <i class="fa fa-reorder"></i>
+                        </a>
+                    </section>
+                </div>
+                <!--登陆後-->
+            </div>
+        </header>
+        <!--nav-->
+        <nav class="nav-bar">
+            <div class="container fflex">
+                <ul class="nav fflex ai-center sm-fflex">
+                    <li class="xs-visible sm-visible"><a class="showH mo-all" href="javascript:;" onClick="showMenu()">全部彩种</a></li>
+                    <li class="index"><a href="index.html">首页</a></li>
+                    <li><a href="award.html">开奖公告</a></li>
+                    <li><a href="trend.html">走势图表</a></li>
+                    <li><a href="promotions.html">最新优惠</a></li>
+                    <li><a href="vip.html">VIP会所</a></li>
+                    <li><a href="aboutus.html">帮助中心</a></li>
+                </ul>
+                <div class="all_lottery"> <a href="javascript:;" class="all_color pc" onClick="showMenu()">全部彩种<i class="fas fa-th-large"></i></a></div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="pop-lottery-box">
+                <div class="cai-list ">
+                    <div class="flex">
+                        <!-- 重慶時時彩 -->
+                        <a href="lottery-official-1.html" class="lottery flip_wrap">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/1.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/1.jpg" class="" />
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 重慶時時彩 -->
+                        <!-- 重慶時時彩 -->
+                        <a href="lottery-official-5.html" class="lottery flip_wrap">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/2.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/2.jpg" class="" />
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 重慶時時彩 -->
+                        <!-- 廣東11選5 -->
+                        <a href="lottery-official-6.html" class="lottery flip_wrap">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/3.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/3.jpg" class="" />
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 廣東11選5 -->
+                    </div>
+                    <div class="flex">
+                        <!-- 江苏快三 -->
+                        <a href="lottery-official-7.html" class="lottery flip_wrap">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/4.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/4.jpg" class="" />
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 江苏快三 -->
+                        <!-- 江西11選5 -->
+                        <a href="lottery-official-8.html" class="lottery flip_wrap">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/5.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/5.jpg" class="" />
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 江西11選5 -->
+                        <!-- 北京賽車  -->
+                        <a href="lottery-official-8.html" class="lottery flip_wrap">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/6.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/6.jpg" class="" />
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 北京賽車 -->
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="cai-list-links">
+                    <div class="row">
+                        <div>
+                            <a href="lottery-official-1.html">重庆时时彩</a>
+                            <a href="lottery-official-2.html">新疆时时彩</a>
+                            <a href="lottery-official-3.html">天津时时彩</a>
+                            <a href="lottery-official-5.html">山东11选5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- header end -->
+    <!--图片轮播-->
+    <link rel="stylesheet" type="text/css" href="js/swiper/swiper.css">
+    <script src="js/swiper/swiper.js"></script>
+    <div class="banner-wrap">
+        <!-- 電腦版快速投注 -->
+        <iframe class="fastbet bet_now pc" src="iframe/bet_now2.html" scrolling="no"></iframe>
+        <!-- 電腦版快速投注 -->
+    </div>
+    <div class="section-box1-slide banner-ma-151">
+        <div class="swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide banner1-bg" data-swiper-slide-index="0">
+                    <section class="banner-wrap"><img src="images/banner1.jpg"></section>
+                </div>
+                <div class="swiper-slide banner2-bg" data-swiper-slide-index="0">
+                    <section class="banner-wrap"><img src="images/banner2.jpg"></section>
+                </div>
+                <div class="swiper-slide banner3-bg" data-swiper-slide-index="0">
+                    <section class="banner-wrap"><img src="images/banner3.jpg"></section>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                <span
+                    class="swiper-pagination-bullet"></span>
+            </div>
+        </div>
+    </div>
+    <!--notice-->
+    <div class="bg-gray">
+        <section class="notice-section container flex">
+            <div class="t">
+                <i class="fa fa-volume-up"></i><span>站内公告</span>
+            </div>
+            <div class="notice">
+                <ul>
+                    <li>第1条公告第1条公告第1条公告第1条公告第1条公告第1条公告</li>
+                    <li>第2条公告第2条公告第2条公告第2条公告第2条公告第2条公告</li>
+                    <li>第3条公告第3条公告第3条公告第3条公告第3条公告第3条公告</li>
+                    <li>第4条公告第4条公告第4条公告第4条公告第4条公告第4条公告</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- header end -->
+    <!-- 全部彩種 -->
+    <section class="section-box1 container row">
+        <div class="all-lottery">
+            <h2><span>全部彩種</span></h2>
+            <div class="swiper-container2">
+                <div class="swiper-wrapper swiper-wrapper2">
+                    <!-- lottery -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-1.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 飙速飞艇-->
+                                    <img src="images/lottery/1.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/1.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_f69e6c">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- lottery -->
+                    <!-- 飆速飛艇 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-2.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 飆速飛艇 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/2.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/2.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_f69e6c">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 飆速飛艇 -->
+                    <!-- 重慶快樂10分 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-3.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/3.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/3.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_f69e6c">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 重慶快樂10分 -->
+                    <!-- 幸运农场 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-4.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/4.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/4.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_49b985">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 幸运农场 -->
+                    <!-- 飙速农场 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-5.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/5.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/5.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_49b985">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 飙速农场 -->
+                    <!-- 飙速时时彩 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-6.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/6.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/6.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_blue">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 飙速时时彩 -->
+                    <!-- 新疆时时彩 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-7.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/7.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/7.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_blue">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 新疆时时彩 -->
+                    <!-- 重庆时时彩 -->
+                    <div class="swiper-slide swiper-slide2 hot">
+                        <a href="lottery-official-8.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/8.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/8.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_blue">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 重庆时时彩 -->
+                    <!-- 飆速賽車 -->
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="lottery-official-9.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/9.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/9.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_pink">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 飆速賽車 -->
+                    <!-- 北京pk10 -->
+                    <div class="swiper-slide swiper-slide2 hot">
+                        <a href="lottery-official-10.html" class="lottery flip_wrap ">
+                            <!-- 大容器 -->
+                            <div class="flip">
+                                <!-- 實現翻牌容器 -->
+                                <div class="side front">
+                                    <!-- 牌正面 -->
+                                    <img src="images/lottery/10.jpg" class="" />
+                                </div>
+                                <div class="side back">
+                                    <!-- 牌背面 -->
+                                    <img src="images/lottery/10.jpg" class="" />
+                                </div>
+                            </div>
+                            <span class="Immediately_pink">立即投注</span>
+                        </a>
+                    </div>
+                    <!-- 北京pk10 -->
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <div class="box2">
+        <!-- <1024快速投注 -->
+        <iframe class="fastbet bet_now mobile" src="iframe/bet_now2.html" scrolling="no"></iframe>
+        <!-- <1024快速投注 -->
+        <!-- 1191手机APP下载 -->
+        <div class="right mobile app-download xs-100">
+            <div class="box-title fflex sm-fflex xs-fflex">
+                <h3 class="app">手机APP下载 </h3>
+                <div class="fr">
+                    <span class="tab J-nav-tab">
+                    <a href="#apk" class="on">安卓</a>
+                    <a href="#app">苹果</a>
+                </span>
+                </div>
+            </div>
+            <div class="mobile-qr">
+                <div class="code-downbox" id="apk">
+                    <div class="code">
+                        <img src="images/lequ-apk.png?" />
+                    </div>
+                </div>
+                <div class="code-downbox" id="app" style="display: none;">
+                    <div class="code">
+                        <img src="images/lequ-app.png?=v0.0.4" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="app-bottom"></div>
+        </div>
+        <!-- 1191手机APP下载 -->
+    </div>
+    <section class="section-box1 container row">
+        <div class="fflex index_flex">
+            <!-- 手机APP下载 -->
+            <div class="right app-download xs-100">
+                <div class="box-title fflex sm-fflex xs-fflex">
+                    <h3 class="app">手机APP下载 </h3>
+                    <div class="fr">
+                        <span class="tab J-nav-tab">
+                                 <a href="#apk1" class="on">安卓</a>
+                                 <a href="#app1">苹果</a>
+                            </span>
+                    </div>
+                </div>
+                <div>
+                    <div class="code-downbox" id="apk1">
+                        <div class="code">
+                            <img src="images/lequ-apk.png" />
+                        </div>
+                    </div>
+                    <div class="code-downbox" id="app1" style="display: none;">
+                        <div class="code">
+                            <img src="images/lequ-app.png?=v0.0.3" />
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="app-bottom"></div>
+            </div>
+            <!-- 手机APP下载 -->
+            <!-- 中奖动态 -->
+            <div class="move hot">
+                <div class="whitline">
+                    <h2>中奖动态</h2>
+                    <ul class="move-list">
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                        <li>
+                            <l class="whit">fjweds123...</l>在
+                            <l class="cc54b9">幸运飞艇</l>中<i>28900</i>元</li>
+                    </ul>
+                </div>
+                <div class="move-bottom"></div>
+            </div>
+            <!-- 中奖动态 -->
+            <!-- 開獎公告 -->
+            <div class="w752  ">
+                <div class="section-box1-right">
+                    <div class="section-box1-content fflex sm-fflex">
+                        <div class="left xs-100">
+                            <iframe class="fastbet public" src="iframe/lottery.html" scrolling="no" seamless="seamless"></iframe>
+                        </div>
+                        <div class="w10"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 開獎公告 -->
+        </div>
+        <br clear="all">
+    </section>
+    <!--box2-->
+    <script>
+        $(document).ready(function() {
+            $('li.index').addClass('on');
+            $('a.showH').attr('onclick', '');
+
+        });
+    </script>
+    <!-- footer -->
+    <!-- footer -->
+    <footer class="footer">
+        <div class="foot-safe">
+            <div class="container">
+                <div class="row flex">
+                    <div class="xs-100">
+                        <div class="safe-box">
+                            <div class="img">
+                                <img src="images/safe1.png" />
+                            </div>
+                            <h3>
+                                安全保障
+                            </h3>
+                            <p>
+                                多重安全机制全程保护
+                            </p>
+                        </div>
+                    </div>
+                    <div class="xs-100">
+                        <div class="safe-box">
+                            <div class="img">
+                                <img src="images/safe2.png" />
+                            </div>
+                            <h3>
+                                支付便捷
+                            </h3>
+                            <p>
+                                快速、确实、便利
+                            </p>
+                        </div>
+                    </div>
+                    <div class="xs-100">
+                        <div class="safe-box">
+                            <div class="img">
+                                <img src="images/safe3.png" />
+                            </div>
+                            <h3>
+                                彩种齐全
+                            </h3>
+                            <p>
+                                支持多个彩种，任意购买
+                            </p>
+                        </div>
+                    </div>
+                    <div class="xs-100">
+                        <div class="safe-box">
+                            <div class="img">
+                                <img src="images/safe4.png" />
+                            </div>
+                            <h3>
+                                领奖无忧
+                            </h3>
+                            <p>
+                                奖金自动返至购彩账户
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-links2">
+            <a href="aboutus.html">关于我们</a><em>|</em><a href="contactus.html">联系我们</a><em>|</em><a href="faq.html">常见问题</a><em>|</em><a href="privacy.html">隐私安全</a><em>|</em><a href="responsibility.html">免责声明</a><em>|</em><a href="deposit.html">存款须知</a><em>|</em>
+            <a
+                href="withdrawal.html">取款须知</a>
+        </div>
+        <div class="copyright">
+            <span class="copyright-txt">
+                Copyright © 2018  |  久赢彩票  |  All Rights Reserved.
+             </span>
+        </div>
+    </footer>
+    <!--客服-->
+    <div class="fix-right">
+        <a href="javascript:void(0)" onclick="window.open('https://f18.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=869735&configID=71573&jid=5418998930&s=1i','_blank', 'width=600,height=600');" target="_blank" class="a1">联络客服</a>
+        <div class="xs-hidden">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1955497110&site=qq&menu=yes" target="_blank" class="qq">
+                QQ在线①
+            </a>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2557883598&site=qq&menu=yes" target="_blank" class="qq">
+                QQ在线②
+            </a>
+        </div>
+        <a href="javascript:;" class="gototop" title="返回顶部"></a>
+    </div>
+    <!-- footer end -->
+    <script src="js/index.js" type="text/javascript"></script>
+</body>
+
+</html>
